@@ -1,17 +1,9 @@
 import Zombie from '../class/zombie.js';
-import {paramsTyp} from '../class/character.js';
 
-test('Проверка наличия класса Zombie', () => {
-    const result = paramsTyp.zombie;
-    expect(result).not.toBe(undefined);
-});
-
-test('Проверка создания класса Zombie', () => {
-    const result = new Zombie('Zombie');
-    expect(result.name).toBe('Zombie'); 
-    expect(result.type).toBe('zombie'); 
-    expect(result.health).toBe(100); 
-    expect(result.level).toBe(1); 
-    expect(result.attack).toBe(40); 
-    expect(result.defence).toBe(10); 
+test('Проверка создания объекта Bowerman', () => {
+    const zombie = new Zombie('Zombie');
+    const correctZombie = {
+        attack: 40, defence: 10, health: 100, level: 1, name: 'Zombie', type: 'Zombie'
+    };
+    expect(zombie).toEqual(correctZombie);
 });

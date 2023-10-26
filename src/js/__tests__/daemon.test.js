@@ -1,17 +1,9 @@
 import Daemon from '../class/daemon.js';
-import {paramsTyp} from '../class/character.js';
 
-test('Проверка наличия класса Daemon', () => {
-    const result = paramsTyp.daemon;
-    expect(result).not.toBe(undefined);
-});
-
-test('Проверка создания класса Daemon', () => {
-    const result = new Daemon('Daemon');
-    expect(result.name).toBe('Daemon'); 
-    expect(result.type).toBe('daemon'); 
-    expect(result.health).toBe(100); 
-    expect(result.level).toBe(1); 
-    expect(result.attack).toBe(10); 
-    expect(result.defence).toBe(40); 
+test('Проверка создания объекта Daemon', () => {
+    const daemon = new Daemon('Daemon');
+    const correctDaemon = {
+        attack: 10, defence: 40, health: 100, level: 1, name: 'Daemon', type: 'Daemon'
+    };
+    expect(daemon).toEqual(correctDaemon);
 });
